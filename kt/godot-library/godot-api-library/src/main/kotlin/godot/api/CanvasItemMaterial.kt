@@ -10,6 +10,7 @@ import godot.`annotation`.GodotBaseType
 import godot.`internal`.memory.TransferContext
 import godot.`internal`.reflection.TypeManager
 import godot.common.interop.VoidPtr
+import godot.core.GodotEnum
 import godot.core.VariantParser.BOOL
 import godot.core.VariantParser.LONG
 import godot.core.VariantParser.NIL
@@ -181,7 +182,7 @@ public open class CanvasItemMaterial : Material() {
 
   public enum class BlendMode(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
      */
@@ -204,7 +205,7 @@ public open class CanvasItemMaterial : Material() {
     PREMULT_ALPHA(4),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
@@ -216,7 +217,7 @@ public open class CanvasItemMaterial : Material() {
 
   public enum class LightMode(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * Render the material using both light and non-light sensitive material properties.
      */
@@ -231,7 +232,7 @@ public open class CanvasItemMaterial : Material() {
     LIGHT_ONLY(2),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }

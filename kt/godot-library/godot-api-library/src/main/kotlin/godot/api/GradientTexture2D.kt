@@ -12,6 +12,7 @@ import godot.`annotation`.GodotBaseType
 import godot.`internal`.memory.TransferContext
 import godot.`internal`.reflection.TypeManager
 import godot.common.interop.VoidPtr
+import godot.core.GodotEnum
 import godot.core.VariantParser.BOOL
 import godot.core.VariantParser.LONG
 import godot.core.VariantParser.NIL
@@ -266,7 +267,7 @@ public open class GradientTexture2D : Texture2D() {
 
   public enum class Fill(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * The colors are linearly interpolated in a straight line.
      */
@@ -281,7 +282,7 @@ public open class GradientTexture2D : Texture2D() {
     SQUARE(2),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
@@ -293,7 +294,7 @@ public open class GradientTexture2D : Texture2D() {
 
   public enum class Repeat(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * The gradient fill is restricted to the range defined by [fillFrom] to [fillTo] offsets.
      */
@@ -310,7 +311,7 @@ public open class GradientTexture2D : Texture2D() {
     MIRROR(2),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }

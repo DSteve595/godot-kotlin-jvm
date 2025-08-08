@@ -14,6 +14,7 @@ import godot.`internal`.reflection.TypeManager
 import godot.common.interop.VoidPtr
 import godot.core.AABB
 import godot.core.Dictionary
+import godot.core.GodotEnum
 import godot.core.PackedVector3Array
 import godot.core.StringName
 import godot.core.VariantArray
@@ -343,7 +344,7 @@ public open class Mesh : Resource() {
 
   public enum class PrimitiveType(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * Render array as points (one vertex equals one point).
      */
@@ -366,7 +367,7 @@ public open class Mesh : Resource() {
     TRIANGLE_STRIP(4),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
@@ -378,7 +379,7 @@ public open class Mesh : Resource() {
 
   public enum class ArrayType(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * [PackedVector3Array], [PackedVector2Array], or [Array] of vertex positions.
      */
@@ -464,7 +465,7 @@ public open class Mesh : Resource() {
     MAX(13),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
@@ -476,7 +477,7 @@ public open class Mesh : Resource() {
 
   public enum class ArrayCustomFormat(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * Indicates this custom channel contains unsigned normalized byte colors from 0 to 1, encoded
      * as [PackedByteArray].
@@ -522,7 +523,7 @@ public open class Mesh : Resource() {
     MAX(8),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
@@ -737,7 +738,7 @@ public open class Mesh : Resource() {
 
   public enum class BlendShapeMode(
     id: Long,
-  ) {
+  ) : GodotEnum {
     /**
      * Blend shapes are normalized.
      */
@@ -748,7 +749,7 @@ public open class Mesh : Resource() {
     RELATIVE(1),
     ;
 
-    public val id: Long
+    public override val id: Long
     init {
       this.id = id
     }
